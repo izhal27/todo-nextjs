@@ -1,8 +1,22 @@
 @import "tailwindcss";
 
+/* #001524 - Ink Black */
+/* #15616D - Stormy Tea */
+/* #FFECD1 - Papaya Whip */
+/* #FF7D00 - Harvest Orange */
+/* #78290F - Brandy */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+@theme {
+  --color-ink: #001524;
+  --color-stormy: #15616d;
+  --color-papaya: #ffecd1;
+  --color-orange: #ff7d00;
+  --color-brandy: #78290f;
 }
 
 @theme inline {
@@ -14,8 +28,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #001524;
+    --foreground: #ff7d00;
   }
 }
 
