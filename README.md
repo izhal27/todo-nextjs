@@ -1,6 +1,6 @@
 # 📝 Todo App
 
-Simple Todo Application built with **:contentReference[oaicite:0]{index=0}**.
+Simple Todo Application built with **NextJS**.
 
 ## ✨ Features
 
