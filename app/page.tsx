@@ -14,7 +14,23 @@ export type Todo = {
 }
 
 export default function Home() {
-  const [todo, setTodo] = useState<Todo[]>([]);
+  const [todo, setTodo] = useState<Todo[]>([
+    {
+      id: '1',
+      text: 'Belajar CSS',
+      status: 'active'
+    },
+    {
+      id: '2',
+      text: 'Belajar NextJS',
+      status: 'completed'
+    },
+    {
+      id: '3',
+      text: 'Belajar NestJS',
+      status: 'active'
+    },
+  ]);
 
   return (
     <div className="flex flex-col max-w-3xl mx-auto min-h-screen items-center bg-zinc-50 font-sans dark:bg-background">
@@ -22,12 +38,12 @@ export default function Home() {
         <Navbar />
       </header>
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-start bg-white dark:bg-background sm:items-start">
-        <div className="flex flex-col justify-center items-center gap-9 mx-auto ">
+        <div className="flex flex-col justify-center items-start gap-9 mx-auto ">
           <div className="w-fit">
             <TodoSummary list={todo} />
           </div>
           <TodoComposer />
-          <TodoList list={todo} />
+          <TodoList listTodo={todo} />
         </div>
       </main>
     </div>
