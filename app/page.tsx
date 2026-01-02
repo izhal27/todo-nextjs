@@ -17,7 +17,7 @@ export default function Home() {
   const [todo, setTodo] = useState<Todo[]>([]);
 
   return (
-    <div className="flex flex-col min-h-screen items-center bg-zinc-50 font-sans dark:bg-background">
+    <div className="flex flex-col max-w-3xl mx-auto min-h-screen items-center bg-zinc-50 font-sans dark:bg-background">
       <header className="flex flex-col w-full px-6 py-4 mx-auto">
         <Navbar />
       </header>
