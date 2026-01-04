@@ -15,9 +15,9 @@ type TodoState = {
 
 type TodoActions = {
   addTodo: (todo: Todo) => void
-  updateTodo: (id: number, title: string) => void
-  removeTodo: (id: number) => void
-  toggleStatus: (id: number) => void
+  updateTodo: (id: Todo['id'], title: Todo['title']) => void
+  removeTodo: (id: Todo['id']) => void
+  toggleStatus: (id: Todo['id']) => void
 };
 
 export const useTodoStore = create<TodoState & TodoActions>()(
@@ -47,6 +47,6 @@ export const useTodoStore = create<TodoState & TodoActions>()(
         ),
       })),
   }),
-    { name: 'todos-sorage' }
+    { name: 'todo-sorage' }
   )
 );
