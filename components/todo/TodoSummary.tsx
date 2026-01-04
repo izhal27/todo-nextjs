@@ -1,7 +1,6 @@
 'use client'
 
 import { useTodo } from "@/hooks/useTodo";
-
 export default function TodoSummary() {
   const { state } = useTodo();
   const totalTodos = state.todos.length;

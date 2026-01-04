@@ -1,12 +1,9 @@
-import { ChangeEvent, KeyboardEventHandler } from "react"
-
 type Props = {
   value: string
   onTextChange: (data: string) => void
   error?: string;
   onSubmit: () => void
 }
-
 export default function TodoInput(props: Props) {
   const { value, onTextChange, error, onSubmit } = props;
 

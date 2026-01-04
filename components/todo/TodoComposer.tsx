@@ -20,7 +20,7 @@ export default function TodoComposer() {
       <TodoInput
         onTextChange={setValue}
         value={value}
-        onSubmit={() => { }} />
+        onSubmit={addButtonHandler} />
       <AddButton onClick={addButtonHandler} />
     </div>
   )

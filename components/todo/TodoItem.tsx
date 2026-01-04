@@ -1,5 +1,5 @@
 import { Todo } from "@/contexts/todo/todo-type";
-import { Edit, TrashIcon } from "lucide-react";
+import { TrashIcon } from "lucide-react";
 
 type Props = {
   todoItem: Todo,

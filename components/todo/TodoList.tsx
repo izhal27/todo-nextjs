@@ -2,7 +2,6 @@
 
 import { useTodo } from "@/hooks/useTodo";
 import TodoItem from "./TodoItem";
-
 export default function TodoList() {
   const { state, dispatch } = useTodo();
 
