@@ -1,10 +1,11 @@
 'use client'
 
-import { useTodo } from "@/hooks/useTodo";
+import { useTodoStore } from "@/stores/todo.store";
+
 export default function TodoSummary() {
-  const { state } = useTodo();
-  const totalTodos = state.todos.length;
-  const completedTodos = state.todos.filter(todo => todo.status === 'completed').length;
+  const todos = useTodoStore(state => state.todos);
+  const totalTodos = todos.length;
+  const completedTodos = todos.filter(todo => todo.status === 'completed').length;
 
   return (
     <div className="flex py-8 px-12 justify-between gap-10 items-center border border-papaya rounded-3xl">

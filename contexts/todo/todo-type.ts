@@ -1,8 +1,8 @@
-export type Todo = {
-  id: number
-  title: string
-  status: 'active' | 'completed'
-}
+// export type Todo = {
+//   id: number
+//   title: string
+//   status: 'active' | 'completed'
+// }
 
 export type TodoState = {
   todos: Todo[]

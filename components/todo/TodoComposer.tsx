@@ -3,14 +3,14 @@
 import { useState } from "react";
 import AddButton from "../ui/AddButton";
 import TodoInput from "./TodoInput";
-import { useTodo } from "@/hooks/useTodo";
+import { useTodoStore } from "@/stores/todo.store";
 
 export default function TodoComposer() {
   const [value, setValue] = useState('');
-  const { dispatch } = useTodo();
+  const addTodo = useTodoStore(state => state.addTodo);
 
   const addButtonHandler = () => {
-    dispatch({ type: "ADD_TODO", payload: value });
+    addTodo({ id: Date.now(), title: value, status: 'active' });
     setValue("");
   }
 
