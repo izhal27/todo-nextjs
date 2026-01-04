@@ -1,19 +1,41 @@
-import { Todo } from "@/app/page"
+'use client'
+
+import { useTodo } from "@/hooks/useTodo";
 import TodoItem from "./TodoItem";
 
-type Props = {
-  listTodo: Todo[]
-}
+export default function TodoList() {
+  const { state, dispatch } = useTodo();
 
-export default function TodoList(props: Props) {
-  const { listTodo } = props;
+  const onEditTodoHandler = (id: number) => {
+    if (id) {
+      dispatch({ type: 'EDIT_TODO', payload: { id, title: '-BERUBAH-' } })
+    }
+  }
+
+  const onRemoveTodoHandler = (id: number) => {
+    if (id) {
+      dispatch({ type: 'REMOVE_TODO', payload: id })
+    }
+  }
+
+  const onToggleStatusTodoHandler = (id: number) => {
+    if (id) {
+      dispatch({ type: 'TOGGLE_STATUS_TODO', payload: id })
+    }
+  }
+
   return (
     <ul className="flex flex-col gap-5 w-full">
       {
-        listTodo.map(todo =>
+        state.todos.map(todo =>
         (
           <li key={todo.id}>
-            <TodoItem todoItem={todo} />
+            <TodoItem
+              todoItem={todo}
+              onEditTodo={onEditTodoHandler}
+              onRemoveTodo={onRemoveTodoHandler}
+              onToggleStatusTodo={onToggleStatusTodoHandler}
+            />
           </li>
         ))
       }

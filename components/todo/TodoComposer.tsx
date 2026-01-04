@@ -1,12 +1,16 @@
+'use client'
+
 import { useState } from "react";
 import AddButton from "../ui/AddButton";
 import TodoInput from "./TodoInput";
+import { useTodo } from "@/hooks/useTodo";
 
 export default function TodoComposer() {
   const [value, setValue] = useState('');
+  const { dispatch } = useTodo();
 
   const addButtonHandler = () => {
-    alert(value);
+    dispatch({ type: "ADD_TODO", payload: value });
     setValue("");
   }
 

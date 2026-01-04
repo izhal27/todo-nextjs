@@ -1,13 +1,11 @@
-import { Todo } from "@/app/page"
+'use client'
 
-type Props = {
-  list: Todo[]
-}
+import { useTodo } from "@/hooks/useTodo";
 
-export default function TodoSummary(props: Props) {
-  const { list } = props;
-  const totalTodos = list.length;
-  const completedTodos = list.filter(todo => todo.status === 'completed').length;
+export default function TodoSummary() {
+  const { state } = useTodo();
+  const totalTodos = state.todos.length;
+  const completedTodos = state.todos.filter(todo => todo.status === 'completed').length;
 
   return (
     <div className="flex py-8 px-12 justify-between gap-10 items-center border border-papaya rounded-3xl">
