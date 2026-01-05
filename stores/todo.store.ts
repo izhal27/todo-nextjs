@@ -24,7 +24,7 @@ export const useTodoStore = create<TodoState & TodoActions>()(
   persist((set) => ({
     todos: [],
     addTodo: (todo) => set((state) => ({
-      todos: [...state.todos, todo]
+      todos: [todo, ...state.todos]
     })),
     updateTodo: (id, title) =>
       set((state) => ({
