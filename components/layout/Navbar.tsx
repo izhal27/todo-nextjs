@@ -3,7 +3,7 @@ import { LogIn } from "lucide-react";
 export default function Navbar() {
   return (
     <nav className="fixed top-0 inset-x-0 z-50 bg-background">
-      <div className="mx-auto max-w-5xl px-36 flex items-center justify-between h-14">
+      <div className="mx-auto max-w-5xl px-6 md:px-36 flex items-center justify-between h-12 md:h-14">
         <div className="font-bold relative group">
           <a href="/">
             Todo<span className="text-papaya">App</span>

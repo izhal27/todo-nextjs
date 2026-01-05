@@ -16,7 +16,7 @@ export default function TodoComposer() {
 
 
   return (
-    <div className="flex w-full justify-between items-center gap-6">
+    <div className="flex w-full justify-between items-center gap-4">
       <TodoInput
         onTextChange={setValue}
         value={value}
